@@ -100,19 +100,20 @@ def write_file(session_id, filename, file_content):
             file_content,
             None  # sourceMap ?
         ],
+        is_notification=True
     )
-    request = {
-        "jsonrpc": "2.0",
-        "method": "WriteFile",
-        "params": [
-            session_id,
-            filename,
-            file_content,
-            None  # sourceMap ?
-        ],
-    }
-    #write_message(request.json)
-    write_message(json.dumps(request))
+    # request = {
+    #     "jsonrpc": "2.0",
+    #     "method": "WriteFile",
+    #     "params": [
+    #         session_id,
+    #         filename,
+    #         file_content,
+    #         None  # sourceMap ?
+    #     ],
+    # }
+    write_message(request.json)
+    #write_message(json.dumps(request))
 
 
 def read_file(session_id, filename):
